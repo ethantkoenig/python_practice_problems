@@ -51,7 +51,7 @@ def binary_search_tree_contains(root_node, value):
     # sub-tree), in which case there are no more places to look, and we can
     # immediately return False.
     if root_node.left == None:
-      return False:
+      return False
     # if the root does have a left sub-tree, recursively search for the
     # sought-after value there.
     return binary_search_tree_contains(root_node.left, value)
