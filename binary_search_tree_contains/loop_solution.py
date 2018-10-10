@@ -29,43 +29,36 @@ class TreeNode(object):
 # binary_search_tree_contains(root_node, 11) should return False.
 def binary_search_tree_contains(root_node, value):
   # root_of_subtree_to_search will refer to the root node of the subtree that we
-  # currently need to search. Initially, we need to search the entire tree, so
-  # we set it to root_node.
+  # currently need to search (or None if there is nothing left to search).
+  # Initially, we need to search the entire tree, so we set it to root_node.
   root_of_subtree_to_search = root_node
 
   # Recall that while loops run until the corresponding condition becomes False.
   # True will never be False, so this means that this loop will never stop
   # looping! Luckily, we can still include return statements inside the loop
   # body, and the function will stop executing once we hit a return statement.
-  while True:
+  while root_of_subtree_to_search != None:
     # if the root of the subtree we are currently searching has the value we are
     # looking for, then we are done, and can return True immediately.
     if root_of_subtree_to_search.value == value:
       return True
     if root_of_subtree_to_search.value < value:
       # if the root's value is less than what we are looking for, we need to
-      # check the root's right sub-tree. However, there's a chance that the root
-      # does not have a right child (and thus has no right sub-tree); in this
-      # case, there are no more places the sought-after value could possibly be,
-      # and we can immediately return False.
-      if root_of_subtree_to_search.right == None:
-        return False
-      # In the next iteration of this while-loop, we want to search the right
-      # subtree of root_of_subtree_to_search, so we update the
-      # root_of_subtree_to_search variable accordingly.
+      # search in the root's right sub-tree. We'll update the
+      # root_of_subtree_to_search variable to the current root's right child, so
+      # that we will begin searching the right subtree in the next iteration of
+      # this while loop.
+      #
+      # There's a chance that the root does not have a right child (and thus has
+      # no right sub-tree); in this case, we will be setting
+      # root_of_subtree_to_search to None, and the while loop will stop after
+      # this iteration.
       root_of_subtree_to_search = root_of_subtree_to_search.right
     else:
-      # similarly, if the root's value is greater than what we are looking for, we need to
-      # check the root's left sub-tree. However, there's a chance that the root
-      # does not have a left child (and thus has no left sub-tree); in this
-      # case, there are no more places the sought-after value could possibly be,
-      # and we can immediately return False.
-      if root_of_subtree_to_search.left == None:
-        return False
-      # In the next iteration of this while-loop, we want to search the left
-      # subtree of root_of_subtree_to_search, so we update the
-      # root_of_subtree_to_search variable accordingly.
+      # Similarly, if the root's value is greater than what we are looking for,
+      # we need to search in the root's left sub-tree.
       root_of_subtree_to_search = root_of_subtree_to_search.left
+  return False
 
 
 # Define the tree from the example above.
