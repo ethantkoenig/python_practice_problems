@@ -9,7 +9,7 @@
 # Example: in the following code
 #
 # l = [4,3,7,1,5]
-# partition(l, 1, 3)
+# partition(l)
 #
 # `l` is now partitioned with a pivot of 4, and might equal [3,1,4,7,5]
 # (although the order of the "less-than-4" and "greater-than-4" sections may
