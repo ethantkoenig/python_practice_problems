@@ -17,8 +17,9 @@ def swap(l, i, j):
 # returning a new list) using quicksort.
 #
 # Arguments:
-# l (type: list of ints): list that to partition.
-
+# l (type: list of ints): the list to partition. You may assume it is non-empty
+# (i.e. has a length of at least 1).
+#
 # Example: in the following code
 #
 # l = [4,3,7,1,5]
