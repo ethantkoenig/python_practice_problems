@@ -33,10 +33,6 @@ def binary_search_tree_contains(root_node, value):
   # Initially, we need to search the entire tree, so we set it to root_node.
   root_of_subtree_to_search = root_node
 
-  # Recall that while loops run until the corresponding condition becomes False.
-  # True will never be False, so this means that this loop will never stop
-  # looping! Luckily, we can still include return statements inside the loop
-  # body, and the function will stop executing once we hit a return statement.
   while root_of_subtree_to_search != None:
     # if the root of the subtree we are currently searching has the value we are
     # looking for, then we are done, and can return True immediately.
@@ -58,6 +54,9 @@ def binary_search_tree_contains(root_node, value):
       # Similarly, if the root's value is greater than what we are looking for,
       # we need to search in the root's left sub-tree.
       root_of_subtree_to_search = root_of_subtree_to_search.left
+  # If we've reached this point, then `root_of_subtree_to_search` is None, and
+  # there's nothing left to search. We've haven't found what we were looking
+  # for, so we return False.
   return False
 
 
