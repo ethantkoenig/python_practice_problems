@@ -1,4 +1,3 @@
-
 # Swaps the elements at indices `i` and `j` in the list `l`. This swap is
 # in-place (i.e. modifying the existing list instead of returning a new list).
 #
@@ -13,8 +12,8 @@ def swap(l, i, j):
   l[j] = element_that_was_previously_at_index_i
 
 
-# Sorts the given list in-place (i.e. modifying the existing list instead of
-# returning a new list) using quicksort.
+# Partitions the given list in-place (i.e. modifying the existing list instead
+# of returning a new list).
 #
 # Arguments:
 # l (type: list of ints): the list to partition. You may assume it is non-empty

@@ -1,6 +1,5 @@
-
-# Sorts the given list in-place (i.e. modifying the existing list instead of
-# returning a new list) using quicksort.
+# Partitions the given list in-place (i.e. modifying the existing list instead
+# of returning a new list).
 #
 # Arguments:
 # l (type: list of ints): the list to partition. You may assume it is non-empty
