@@ -19,7 +19,7 @@ def queue_pop(queue):
   return queue.pop(0)
 
 def queue_push(queue, element):
-  # Unlike `queue_pop`, this one should be understandable; recall the `queue`
+  # Unlike `queue_pop`, this one should be understandable; recall that `queue`
   # is a list.
   queue.append(element)
 
